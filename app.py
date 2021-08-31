@@ -8,7 +8,7 @@ import os
 app=Flask(__name__)
 
 # connection_url='sqlite:///ufo.sqlite'
-connection_url=os.environ.get('DATABASE_URL').replace('postgrtes', 'postgresql')
+connection_url=os.environ.get('DATABASE_URL').replace('postgres', 'postgresql')
 engine=create_engine(connection_url)
 
 ##### Setting up DB #####
