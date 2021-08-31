@@ -3,10 +3,12 @@ from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String, Float
 from sqlalchemy.orm import Session
+import os
 
 app=Flask(__name__)
 
-connection_url='sqlite:///ufo.sqlite'
+# connection_url='sqlite:///ufo.sqlite'
+connection_url=os.environ.get('DATABASE_URL').replace('postgrtes', 'postgresql')
 engine=create_engine(connection_url)
 
 ##### Setting up DB #####
